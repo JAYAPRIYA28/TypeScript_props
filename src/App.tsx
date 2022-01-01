@@ -1,8 +1,10 @@
 
+
 import './App.css';
 import Greet from './Components/Greet';
 import Child from './Components/Child';
 import Parent from './Components/Parent';
+import Event from './Components/Event';
 
 const greetSlot = {
     countList: 10
@@ -29,6 +31,12 @@ function App() {
       <Parent>
       <Child>this is child</Child>
       </Parent>
+      <Event  handleClick={event => {
+        console.log("you clicked me", event)
+      }} handleChange={event => {
+        console.log("changes happened", event, event.target.value)
+      }}
+      styles = {{ padding: '10px', color: 'red'}}/>
     </div>
   );
 }
